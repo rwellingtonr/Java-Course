@@ -4,24 +4,26 @@ public class Carro {
 	
 	//velocidade nunca pode ser menor do q 0
 	int velAtual = 60;
-	boolean velLimit = (velAtual >= 0) && (velAtual <= 250);
+	final int VELOCIDADE_MAXIMA;
+	protected int aceleracao = 5;
 	
+	Carro (int velocidadeMaxima){
+		this.VELOCIDADE_MAXIMA = velocidadeMaxima;
+	}
 	
-	boolean frear(Carro carro) {
-		if(velLimit) {
+	void frear(Carro carro) {
+		if(velAtual >= 10) {
 			carro.velAtual -= 10;
-			return true;
 		} else {
-			return false;
+			carro.velAtual = 0;
 		}
 	}
 	
-	boolean acelerar(Carro carro){
-		if (velLimit) {
-			carro.velAtual += 5;
-			return true;
+	void acelerar(Carro carro){
+		if ((velAtual + aceleracao) > VELOCIDADE_MAXIMA) {
+			carro.velAtual = VELOCIDADE_MAXIMA;
 		} else {
-			return false;
+			carro.velAtual += aceleracao; 
 		}
 	}
 }

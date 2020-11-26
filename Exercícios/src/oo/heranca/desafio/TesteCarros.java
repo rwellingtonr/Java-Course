@@ -5,14 +5,16 @@ public class TesteCarros {
 	//instanciar um Mustang e um Volkswagen
 	public static void main(String[] args) {
 		
-		Volkswagen Gol = new Volkswagen();
-		Mustang Boss429 = new Mustang();
+		Carro Gol = new Volkswagen(220);
+		Carro Boss429 = new Mustang(350);
+		Gol.velAtual = 60;
+		Boss429.velAtual = 20;
 		
 		System.out.printf("Velocidade atual do Gol é %dkm/h\n", Gol.velAtual);
 		System.out.printf("Velocidade atual do Boss 429 é %dkm/h\n", Boss429.velAtual);
 		
 		//acelerar
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < 5; i++) {
 			Gol.acelerar(Gol);
 			Boss429.acelerar(Boss429);
 		}
