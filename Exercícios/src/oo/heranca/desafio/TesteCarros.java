@@ -6,7 +6,7 @@ public class TesteCarros {
 	public static void main(String[] args) {
 		
 		Carro Gol = new Volkswagen(220);
-		Carro Boss429 = new Mustang(350);
+		Mustang Boss429 = new Mustang(300);
 		Gol.velAtual = 60;
 		Boss429.velAtual = 20;
 		
@@ -30,6 +30,23 @@ public class TesteCarros {
 		System.out.println();
 		System.out.printf("Velocidade do Gol após pisar no freio 3 vezes: %dkm/h\n", Gol.velAtual);
 		System.out.printf("Velocidade do Boss 429 após pisar no freio 3 vezes: %dkm/h\n", Boss429.velAtual);
+	
+		Gol.velAtual = 60;
+		Boss429.velAtual = 20;
+		Boss429.ligarTurbo();
+		
+		//acelerar
+				for (int i = 0; i < 5; i++) {
+					Gol.acelerar(Gol);
+					Boss429.acelerar(Boss429);
+				}
+				
+		System.out.println();
+		System.out.printf("Velocidade do Gol após pisar no freio 3 vezes: %dkm/h\n", Gol.velAtual);
+		System.out.printf("Velocidade do Boss 429 após pisar no freio 3 vezes: %dkm/h\n", Boss429.velAtual);
+	
+	
+	
 	}
 
 }

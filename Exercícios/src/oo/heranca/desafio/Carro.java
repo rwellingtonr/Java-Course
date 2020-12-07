@@ -5,7 +5,7 @@ public class Carro {
 	//velocidade nunca pode ser menor do q 0
 	int velAtual = 60;
 	final int VELOCIDADE_MAXIMA;
-	protected int aceleracao = 5;
+	private int aceleracao;
 	
 	Carro (int velocidadeMaxima){
 		this.VELOCIDADE_MAXIMA = velocidadeMaxima;
@@ -20,10 +20,19 @@ public class Carro {
 	}
 	
 	void acelerar(Carro carro){
-		if ((velAtual + aceleracao) > VELOCIDADE_MAXIMA) {
+		if ((velAtual + getAceleracao()) > VELOCIDADE_MAXIMA) {
 			carro.velAtual = VELOCIDADE_MAXIMA;
 		} else {
-			carro.velAtual += aceleracao; 
+			carro.velAtual += getAceleracao(); 
 		}
 	}
+
+	public int getAceleracao() {
+		return aceleracao;
+	}
+
+	public void setAceleracao(int aceleracao) {
+		this.aceleracao = aceleracao;
+	}
+	
 }
