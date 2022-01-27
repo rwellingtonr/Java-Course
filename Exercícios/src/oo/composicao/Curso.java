@@ -6,7 +6,7 @@ import java.util.List;
 public class Curso {
 	
 	//final para definir como contante o endereço de memória.
-	//Embora o conteudo ser variável
+	//Embora o conteúdo ser variável
 	final String nome;
 	final List<Aluno> alunos = new ArrayList<>();
 	

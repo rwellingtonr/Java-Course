@@ -8,7 +8,7 @@ public class Aluno {
 	final String nome;
 	final List<Curso> cursos = new ArrayList<>();
 	
-	//Contrutor
+	//Construtor
 	Aluno(String nome){
 		this.nome = nome;
 	}
